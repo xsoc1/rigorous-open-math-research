@@ -1,0 +1,20 @@
+{
+	"workspace_write": true,
+	"foreign_read_blocked": true,
+	"project_read_blocked": true,
+	"auth_read_blocked": true,
+	"sibling_read_blocked": true,
+	"outside_write_blocked": true,
+	"plugin_files_readable": true,
+	"network_blocked": true,
+	"prompt_items": 5,
+	"prompt_bytes": 16340,
+	"network_baseline_reachable": true,
+	"plugin_file_count": 4,
+	"config_sha256": "e6a7abe8cb84917ba23af9c8bf9c63f7ed30ad3fd28ddad341d3fe8f0bc40417",
+	"binary_sha256": "56ef98ab4032d317ab26e9b5e5a175650717351edb16ed9cde0cb6d1734d62da",
+	"workflow_visible": true,
+	"legacy_project_visible": false,
+	"foreign_session_visible": false,
+	"verdict": "PASS"
+}

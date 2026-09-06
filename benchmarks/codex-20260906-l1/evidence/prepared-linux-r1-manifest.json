@@ -1,0 +1,99 @@
+{
+	"schema_version": 1,
+	"kind": "REGRESSION_NOT_NOVELTY",
+	"root": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1",
+	"binary": "/home/huangzy/codex-benchmark-runtime/0.153.4/codex",
+	"binary_sha256": "56ef98ab4032d317ab26e9b5e5a175650717351edb16ed9cde0cb6d1734d62da",
+	"python": "/usr/bin/python3.14",
+	"python_sha256": "b8d8288faefdd300201f43fcf00f6f539a27218eeed3a3dff5ab10b9c4c99700",
+	"proxy": "http://127.0.0.1:7897",
+	"platform": "linux",
+	"cli_version": "codex-cli 0.153.4",
+	"model": "gpt-6-astra",
+	"effort": "max",
+	"arm_commits": {
+		"A": "516037f14f340107da8448b6e42df17317d9fc63",
+		"B": "6d6d739645981a5a2970b5faa26adda49a724113",
+		"C": null
+	},
+	"schedule": {
+		"t1": [
+			"C",
+			"A",
+			"B"
+		],
+		"t2": [
+			"B",
+			"A",
+			"C"
+		]
+	},
+	"arms": [
+		{
+			"task": "t1",
+			"arm": "A",
+			"base": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t1/a",
+			"home": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t1/a/home",
+			"work": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t1/a/work",
+			"prompt_sha256": "bdc8d34d7fbb149d9d2c03c9f0c452605cdb3d7c3931e09ddd28cffabfb5802d",
+			"config_sha256": "40f5ccf176bf05167cd846a3927b3e346177fc11f01c33d26f499c3e8154a787"
+		},
+		{
+			"task": "t1",
+			"arm": "B",
+			"base": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t1/b",
+			"home": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t1/b/home",
+			"work": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t1/b/work",
+			"prompt_sha256": "bdc8d34d7fbb149d9d2c03c9f0c452605cdb3d7c3931e09ddd28cffabfb5802d",
+			"config_sha256": "5fce87edd04ebc08786a1d2f492b0bd1c198fae8b7a9a41bd465eae915a52973"
+		},
+		{
+			"task": "t1",
+			"arm": "C",
+			"base": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t1/c",
+			"home": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t1/c/home",
+			"work": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t1/c/work",
+			"prompt_sha256": "6121f2f3e5b5fbed4fb06e28b8b6c81f887894f40428b8098c29899e9316b63d",
+			"config_sha256": "1915a37be53f3959ca8aac4a92229920a916b229300c7653db559fde986989fa"
+		},
+		{
+			"task": "t2",
+			"arm": "A",
+			"base": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t2/a",
+			"home": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t2/a/home",
+			"work": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t2/a/work",
+			"prompt_sha256": "e52bfdc4ad0e9c9b9cdc8188c219322fa8f4bbbc7af8022796cc0b01dcc113a2",
+			"config_sha256": "0260ce3d6d0ed6922c94a0424ef8dee035b532775ba21ff6d75561a635840ddc"
+		},
+		{
+			"task": "t2",
+			"arm": "B",
+			"base": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t2/b",
+			"home": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t2/b/home",
+			"work": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t2/b/work",
+			"prompt_sha256": "e52bfdc4ad0e9c9b9cdc8188c219322fa8f4bbbc7af8022796cc0b01dcc113a2",
+			"config_sha256": "7e793575772bbb44bdad2163132eff0b7378abd4ad0e7d92fe58375ec0a99ebb"
+		},
+		{
+			"task": "t2",
+			"arm": "C",
+			"base": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t2/c",
+			"home": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t2/c/home",
+			"work": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t2/c/work",
+			"prompt_sha256": "8279600a2e5cb0fcef917caaeb4854635520d516e7cf07ae5e06aca58db956c1",
+			"config_sha256": "195bdd527d837697c5fcc993701126f6e73092a43160202efe742dbcb45f93de"
+		}
+	],
+	"tasks": {
+		"t1": {
+			"source": "/mnt/f/LaTeX/BVE research/runs/plugin-benchmark-20260824-calibration/frozen_task.md",
+			"sha256": "1fa717b9a5f195c42ecca97d51e20327cb4eb2c316c936c054f55f7dd7416f16"
+		},
+		"t2": {
+			"source": "/mnt/f/LaTeX/BVE research/runs/three-arm-pilot-v2/pilot-v5-codex-u2/frozen_task.md",
+			"sha256": "6859e0af922ba8454758e2195fcefcfe8fa164a40e2c23022ec7ebb2da228943"
+		}
+	},
+	"model_catalog_sha256": "32bdd1fe3ffd82df3d03c6c9b9d9068087cd9640ded4377f604586d7a743749b",
+	"code_mode_host_sha256": "3e85d67471825f73d02ff5f7e047ca1f6ca8caa3f59e4c6e8d9ca6ca7302cb45"
+}

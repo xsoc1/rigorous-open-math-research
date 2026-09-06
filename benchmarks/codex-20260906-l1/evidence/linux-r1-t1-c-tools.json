@@ -1,0 +1,43 @@
+{
+	"model": "gpt-6-astra",
+	"reasoning": {
+		"effort": "max",
+		"context": "all_turns"
+	},
+	"tool_names": [
+		"functions.exec",
+		"nested.apply_patch",
+		"nested.exec_command",
+		"nested.view_image",
+		"nested.write_stdin",
+		"nested.clock__curr_time",
+		"functions.wait",
+		"functions.request_user_input",
+		"functions.request_user_input_async",
+		"clock.sleep",
+		"collaboration.followup_task",
+		"collaboration.interrupt_agent",
+		"collaboration.list_agents",
+		"collaboration.send_message",
+		"collaboration.spawn_agent",
+		"collaboration.wait_agent"
+	],
+	"forbidden": [],
+	"requests": 3,
+	"external_model_calls": 0,
+	"resume_same_session": true,
+	"operational_checks": {
+		"workspace_write": true,
+		"foreign_read_blocked": true,
+		"project_read_blocked": true,
+		"auth_read_blocked": true,
+		"sibling_read_blocked": true,
+		"outside_write_blocked": true,
+		"plugin_files_readable": true,
+		"network_blocked": true
+	},
+	"transport": "LOCAL_STUB_CUSTOM_PROVIDER_SAME_BUNDLED_MODEL_CATALOG",
+	"config_sha256": "1915a37be53f3959ca8aac4a92229920a916b229300c7653db559fde986989fa",
+	"binary_sha256": "56ef98ab4032d317ab26e9b5e5a175650717351edb16ed9cde0cb6d1734d62da",
+	"verdict": "PASS"
+}

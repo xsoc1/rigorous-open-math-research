@@ -1,0 +1,39 @@
+[
+	{
+		"id": "01a07589-bd4d-7291-bb67-129338dbe34b",
+		"source": "exec",
+		"path": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC/t1/c/home/sessions/2026/09/06/rollout-2026-09-06T15-05-56-01a07589-bd4d-7291-bb67-129338dbe34b.jsonl",
+		"models": [
+			"gpt-6-astra"
+		],
+		"efforts": [
+			"max"
+		],
+		"token_usage": {
+			"input_tokens": 33755,
+			"cached_input_tokens": 21888,
+			"cache_write_input_tokens": 0,
+			"output_tokens": 469,
+			"reasoning_output_tokens": 195,
+			"total_tokens": 34224
+		},
+		"outer_tool_calls": 3,
+		"response_count": null,
+		"aggregate_active_seconds": null
+	},
+	{
+		"id": "01a07589-bd4d-7291-bb67-129338dbe34b",
+		"source": "exec",
+		"path": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC/t1/c/home/sessions/2026/09/06/rollout-2026-09-06T15-06-25-01a0758a-300d-7873-bcba-28a1fc871850.jsonl",
+		"models": [
+			"gpt-6-astra"
+		],
+		"efforts": [
+			"max"
+		],
+		"token_usage": null,
+		"outer_tool_calls": 0,
+		"response_count": null,
+		"aggregate_active_seconds": null
+	}
+]

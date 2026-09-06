@@ -1,71 +1,71 @@
 # L1 three-arm regression status
 
-Updated: 2026-09-06. State: PAUSED_INFRASTRUCTURE_AND_QUOTA_NO_SOLVER_STARTED.
+Updated: 2026-09-06. State: T1_REPLACEMENT_READY_WAITING_QUOTA.
 
-User approved starting old-plugin / new-plugin / blank-Codex comparisons after
-the first optimization release. Start with one task and calibrate actual quota
-consumption before the second. No reset-credit redemption is authorized.
+User requested continuation. Preparation and one infrastructure-invalid attempt
+are recorded. Valid completed/scored runs: 0. External mathematical audits: 0.
+The intended experiment remains old plugin A / new plugin B / blank Codex C,
+with T1 order C,A,B and T2 order B,A,C. T2 is prepared but not sealed.
 
-- Actual project: `F:/LaTeX/BVE research`; ignore the desktop's malformed cwd.
-- Plugin baseline: `516037f14f340107da8448b6e42df17317d9fc63`.
-- Candidate: `6d6d739645981a5a2970b5faa26adda49a724113`.
-- Detected CLI: 0.153.4, Windows binary under the 27d6a192e9c98618 directory.
-- Intended common model/effort: gpt-6-astra / max, checked against the catalog
-  and actual launch records before scoring.
-- External runtime root: `F:/benchmark/L1-20260906-ASTRA-ABC`.
-- Proposed tasks: T1 B3 O3 root count (bounded closure); T2 U2 lamplighter TV
-  (honest partial progress). Both are known development tasks, REGRESSION only.
-- Source task Markdown may be copied. Do not execute or copy BVE Python tools,
-  historical solver outputs, accepted graph, or Q9 checkpoint-bound artifacts.
+## Current verified execution path
 
-## Verified preparation and observed failures
+- Real checkout: /mnt/f/LaTeX/BVE research/_xsoc1_work. Ignore malformed desktop cwd.
+- Current campaign: /home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1.
+- Isolated CLI: /home/huangzy/codex-benchmark-runtime/0.153.4/codex, plus its
+  matching code-mode host. Both binaries and the bundled catalog are hash-bound.
+  The PATH CLI 0.149.1 is not part of this experiment.
+- A commit: 516037f14f340107da8448b6e42df17317d9fc63.
+  B commit: 6d6d739645981a5a2970b5faa26adda49a724113.
+  All arms use gpt-6-astra / max and the same basic tools and child limit.
+- Existing WSL loopback proxy now works. No previously rejected bridge was run.
+- All T1 arms passed filesystem and network isolation, expected skill metadata,
+  actual functions.exec sandbox execution and synthetic same-session resume.
+  These stub tests used no external model calls and no real auth credentials.
+- control/SEALED.json binds the manifest, harness code and six successful gates.
+  Every replacement solver home has zero solver sessions at sealing.
+- Four deterministic runner checks and all 81 repository checks passed.
+- Last quota snapshot: 2026-09-06T07:13:41Z, five-hour remaining 22%, weekly
+  remaining 24%. Below the 35% / 25% launch gate. No reset redemption authorized.
 
-- Six Windows homes/workspaces and both immutable source snapshots exist under
-  the external root. `control/manifest.json` records source and prompt hashes.
-  No `codex exec` solver call, scoring attempt, research child or external audit
-  has been launched. Preparation probes use local debug/sandbox commands only.
-- Windows binary SHA256:
-  a1cf6360ca71918d5466bc3a32d9f18b7044c9128756d1949e715d277b88c9b6.
-- The unelevated sandbox rejected restricted reads. The elevated backend could
-  launch the system PowerShell but not the user-profile Python executable.
-- A 53594656-byte isolated Python runtime was prepared under
-  `F:/tools/codex-benchmark-runtime-20260906`, with standard library and selected
-  yaml/sympy/mpmath packages, without user .pth files. It launches in the sandbox.
-- Blank prompt probes have no research skill, KP-DET state or current session
-  ID. However both restricted-profile and explicit-deny sandbox probes still
-  read the main project, foreign canary and their own auth file. Only boolean
-  outcomes were emitted; credentials were never printed or copied into Git.
-- `network_blocked=true` in the initial raw probe means a connection to 1.1.1.1
-  failed; without a reachable baseline that alone does not certify isolation.
-- WSL has bundled Codex 0.153.4, Python 3.14, PyYAML and bubblewrap. Direct
-  connection to chatgpt.com failed with Network is unreachable. Its gateway is
-  172.22.112.1 and observed guest address 172.22.125.114; re-check after restart.
-- Automatic approval rejected the command to start a restricted WSL proxy
-  bridge and then prepare WSL arms, reporting only blocked by policy. The
-  command did not start; there is no bridge receipt or WSL campaign directory.
-  Do not repeat the rejected action as an equivalent workaround.
-- Shared account snapshot changed from five-hour used 23%, weekly used 52% at
-  this continuation's start to 91% / 63%. This is account-level preparation
-  context, not solver usage. No per-arm cost or mathematical result exists.
+## Exact next action
 
-## Exact continuation
+1. Read this file, git status and r1 control/SEALED.json. Do not prepare another
+   campaign or reinstall the plugin. Inspect any run/state.json before dispatch.
+2. Obtain a fresh account snapshot. Update r1 control/quota.json with captured_at
+   (UTC ISO timestamp), five_hour_remaining and weekly_remaining. These are
+   account-level data, not treatment costs. Launch only at >=35% / >=25%.
+3. Run from the checkout:
+   python3 -X utf8 scripts/benchmark_runner.py --root /home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1 --task t1 --arm C
+4. Refresh the quota file during execution. It expires after five minutes;
+   reaching the reserve or creating run/STOP causes cancellation and checkpoint.
+   The runner retains segment logs, root ID, observed child sessions and elapsed
+   budget. An ordinary PAUSED state can use --resume with the same task/arm;
+   --reconcile handles uncertain exits without creating another attempt.
+5. Freeze and inspect the returned mathematics, perform the separately budgeted
+   label-blind audit, and calibrate cost before A/B. Complete usage deduplication
+   before aggregate cost comparisons. Missing returns or usage stay UNKNOWN.
+6. T2, feature literature-to-tool reuse, controlled research interruption, L2
+   and model/effort ablations remain later work. Do not dispatch them implicitly.
 
-1. Read this status and current git diff. Do not reinitialize the six prepared
-   directories or delete failed probes. Inspect live processes before dispatch.
-2. Resolve a permitted, verified execution path. The Windows sandbox probe may
-   be losing read restrictions in CLI profile translation; compare the actual
-   sandbox-state protocol before attributing a general backend failure. A local
-   protocol schema dump exists in control/schemas. Alternatively, WSL needs
-   usable approved connectivity and a verified filesystem sandbox.
-3. Correct probe gaps: verify outside-workspace writes are blocked; test network
-   against a reachable baseline; ensure generated Python uses tabs; test A/B
-   skill visibility and helper readability as well as C's absence of skills.
-4. Implement and verify the durable bounded runner, model/tool exposure checks,
-   quota stop handling, session reconciliation and scored metric extraction.
-5. Seal the preregistration and exact environment only after all gates pass,
-   then run T1 in order C, A, B with external blind audits. T2 waits for actual
-   T1 cost and quality. Keep current BVE research and Q9 untouched.
+## Preserved invalid attempt and earlier evidence
 
-Parent manifest/probe summaries copied under this directory are evidence only.
-Auth files, sandbox user secrets, model catalogs and raw sessions stay outside
-the repository. The unfinished harness is development code, not a plugin release.
+Initial Linux campaign: /home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC.
+Its C root was 01a07589-bd4d-7291-bb67-129338dbe34b, stopped after 62.290282 s.
+Two calls failed because code_mode_host was disabled while the schema still
+exposed functions.exec. A child dispatch was observed. This is INFRA_INVALID,
+not a mathematical failure. Its invalid-attempt.json prevents continuation.
+Known root cumulative usage is 33755 input (21888 cached) and 469 output.
+A second file reuses the root header ID and has no returned usage; total child
+cost is unknown. Do not sum inherited/fork records as separate fresh usage.
+
+Windows preparation and failed probes remain under
+F:/benchmark/L1-20260906-ASTRA-ABC. Restricted and explicit-deny probes could read
+forbidden files, so no Windows solver was launched. A network timeout alone did
+not certify isolation. Automatic approval rejected a bridge start with only
+blocked by policy; no bridge receipt or process was created by that command.
+The existing proxy later became reachable after the user changed environments.
+
+Git contains only manifest/probe summaries and invalid-attempt observations.
+Auth files, raw sessions and private runtime data remain outside the repository.
+Current BVE mathematics, accepted graph and Q9 were not changed. This benchmark
+branch does not change released plugins or require a DSH/runtime installation.

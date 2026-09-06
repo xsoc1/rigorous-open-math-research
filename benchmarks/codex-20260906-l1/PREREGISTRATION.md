@@ -1,8 +1,11 @@
 # L1 old/new/blank regression protocol
 
-Date: 2026-09-06. Status: DRAFT_INFRASTRUCTURE_PREFLIGHT_FAILED.
-Task bytes and treatment commits are selected; launch configuration and runner
-must be sealed only after successful isolation checks. No solver has started.
+Date: 2026-09-06. Status: T1_REPLACEMENT_R1_SEALED_WAITING_QUOTA.
+Task bytes and treatment commits are selected. T1 uses the Linux CLI 0.153.4
+and a pinned bundled model catalog; its three arms passed filesystem and
+loopback request-capture checks. Scoring starts only after control/SEALED.json
+binds the final config, gates and manifest. The original seal preceded any solver call. One infrastructure-invalid C attempt
+then led to the replacement amendment below; no replacement solver has started.
 
 ## Objective and treatments
 
@@ -48,12 +51,15 @@ new research and preserve/reconcile current work. Account percentages are shared
 and are not converted into per-task tokens. Never redeem reset credit without
 explicit authorization. Check at stage boundaries and during long runs.
 
-Record root/child IDs before dispatch, incrementally retain output, and persist
+Record dispatch intent before process creation, then retain allocated root/child
+IDs as soon as they are observable. Incrementally retain output and persist
 runner PID, active elapsed time and exact next action. A quota continuation
 reuses the original session and remaining budget after artifact reconciliation;
 it does not gain a fresh attempt. Unknown in-flight status remains UNKNOWN or
-NO_RETURN, not a mathematical failure or success. The durable runner is still
-to be implemented and tested before scoring.
+NO_RETURN, not a mathematical failure or success. The durable Linux runner retains segment logs, enforces a single campaign
+lock and active-wall remainder, and stops on stale quota snapshots after five
+minutes. Graceful cancellation has a five-second cleanup allowance, recorded
+in elapsed time. Unknown unobserved intervals require budget reconciliation.
 
 ## Isolation gate
 
@@ -104,3 +110,55 @@ and [non-interactive guide](https://learn.chatgpt.com/docs/non-interactive-mode)
 alongside the installed binary's help and generated schemas. Local behavior
 must pass the gate even when configuration text appears correct.
 Current observed failures and recovery steps are in [STATUS.md](STATUS.md).
+
+## Linux preflight amendment before the first scored call
+
+The existing WSL loopback proxy became reachable after the environment change.
+No new proxy bridge was started. The isolated executable hash is
+`56ef98ab4032d317ab26e9b5e5a175650717351edb16ed9cde0cb6d1734d62da`.
+The PATH CLI 0.149.1 is not used. Model catalog bytes are pinned for all arms.
+
+Filesystem probes now include sibling reads and out-of-workspace writes. A
+reachable loopback proxy supplies the positive network control. The source
+auth file is copied only to private fresh homes and remains unavailable to
+solver shell tools. No real credential is used by the request-capture stub.
+
+Tool schemas were captured from synthetic requests to a loopback HTTP stub
+using the same catalog, model and effort, with an explicit custom provider.
+This validates client-side tool construction; it is not a live service test.
+The common tools are shell/patch, local image viewing, clock, input questions
+and agent collaboration. Network, browser, app and cross-task tools are absent.
+A synthetic interrupted session resumes with the same root UUID. Live model
+identity, usage and any infrastructure failure must still be recorded.
+
+Four deterministic runner checks cover reserve/staleness, retained artifacts
+and shared continuation budget, exclusive locking, and unknown usage. Synthetic
+requests and runner tests are unscored infrastructure work. T2 is not sealed.
+
+## Replacement amendment after initial C infrastructure failure
+
+Initial C ran for 62.290282 seconds and was stopped after two attempted code
+execution calls reported code-mode host is disabled. A child dispatch was also
+observed. No result was scored. Preserve the full attempt, partial usage and
+unknown child accounting as infrastructure cost; do not reuse its session.
+The earlier request-schema gate missed this runtime failure.
+
+All replacement arms use new homes under
+/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1. The common mechanical
+change enables code_mode_host and copies/hashes the matching helper executable.
+Task bytes, plugin commits, model, effort, ordering, time caps, scoring and quota
+thresholds remain the preregistered values. The replacement does not depend on
+mathematical quality: the original attempt is excluded for unusable tools.
+
+The stronger loopback stub now returns a synthetic tool call, executes the
+sandbox probe through functions.exec, checks positive and negative controls,
+then completes and resumes the same UUID. A/B/C all passed with real sandbox
+command execution and no external model calls. The copied probe home contains
+only a fake auth placeholder; actual arm auth denial is checked separately.
+The runner refuses schema-only gates and invalid-attempt continuations. Its
+seal also binds the runtime helper and harness code hashes.
+
+Usage summaries are file-level cumulative observations. A duplicate session
+header appeared in a second file after child dispatch; deduplication and unknown
+in-flight usage must be resolved before reporting aggregate treatment cost.
+The benchmark has zero valid completed runs and zero external audits so far.

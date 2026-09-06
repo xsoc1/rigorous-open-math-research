@@ -1,0 +1,33 @@
+{
+	"model": "gpt-6-astra",
+	"reasoning": {
+		"effort": "max",
+		"context": "all_turns"
+	},
+	"tool_names": [
+		"functions.exec",
+		"nested.apply_patch",
+		"nested.exec_command",
+		"nested.view_image",
+		"nested.write_stdin",
+		"nested.clock__curr_time",
+		"functions.wait",
+		"functions.request_user_input",
+		"functions.request_user_input_async",
+		"clock.sleep",
+		"collaboration.followup_task",
+		"collaboration.interrupt_agent",
+		"collaboration.list_agents",
+		"collaboration.send_message",
+		"collaboration.spawn_agent",
+		"collaboration.wait_agent"
+	],
+	"forbidden": [],
+	"requests": 2,
+	"external_model_calls": 0,
+	"resume_same_session": true,
+	"transport": "LOCAL_STUB_CUSTOM_PROVIDER_SAME_BUNDLED_MODEL_CATALOG",
+	"config_sha256": "e930cffb47369f7bafc240d0d73e286bd97141a5a9e372bde0007b123d15ad99",
+	"binary_sha256": "56ef98ab4032d317ab26e9b5e5a175650717351edb16ed9cde0cb6d1734d62da",
+	"verdict": "PASS"
+}
