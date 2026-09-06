@@ -1,0 +1,155 @@
+{
+  "verdict": "PASS",
+  "scores": {
+    "correctness": 40,
+    "fidelity": 20,
+    "strict_progress": 15,
+    "calibration": 10,
+    "evidence": 10,
+    "reproducibility": 5
+  },
+  "total_score": 100,
+  "score_explanations": {
+    "correctness": "The submitted argument proves the reduction, exact root count, location, and simplicity uniformly, with no load-bearing gap.",
+    "fidelity": "It treats precisely the matrices, polynomial quotient, parameter range, open interval, and all five separately requested audits in TASK.md.",
+    "strict_progress": "All requested obligations are closed in the original submission; no auditor-supplied repair is needed.",
+    "calibration": "The assertion of a complete uniform exact proof is supported. The additional boundary count and stronger root-location bound are also proved.",
+    "evidence": "Explicit matrix identities, alternating signs on disjoint intervals, full factorizations, and nonzero derivatives provide verifiable support.",
+    "reproducibility": "The elementary proof is independently checkable from the two input files. The accompanying standard-library Python checker reproduces 15 exact supplementary algebra checks."
+  },
+  "earliest_substantive_gap": null,
+  "load_bearing_gaps": [],
+  "false_claims": [],
+  "repairs_supplied": [],
+  "checked_claims": [
+    {
+      "id": "parameters",
+      "source": "CANDIDATE.md:7-18",
+      "claim": "The auxiliary parameters and polynomial recurrences are valid for every integer n >= 1 and R > 1.",
+      "status": "VERIFIED",
+      "evidence": "s > 1 gives 0 < a = 1/s < 1 and A - 2 = (s-1)^2/(2s) > 0. The given U recurrence starts with U_{-1}=0 and U_0=1, so there is no undefined index. Its leading term is 2^m z^m; consequently P_n has degree n and leading coefficient 2^n."
+    },
+    {
+      "id": "matrix_recurrence",
+      "source": "CANDIDATE.md:20-36",
+      "claim": "det C = 1 and tr C = 2z imply the stated recurrence for G.",
+      "status": "VERIFIED",
+      "evidence": "The displayed determinant expansion uses sa=1 and c^2+q^2=1 correctly. The trace equals 2-(s+2+a)q^2=2z. The explicit 2-by-2 characteristic identity gives C^2-2zC+I=0. Left multiplication by E C^{m-1}, valid for m >= 1, produces G_{m+1}=2zG_m-G_{m-1} with the correct multiplication order."
+    },
+    {
+      "id": "exact_reduction",
+      "source": "CANDIDATE.md:34-51",
+      "claim": "G_{n,s}(y) = sin(y) P_n(1-A sin^2(y)) for every real y.",
+      "status": "VERIFIED",
+      "evidence": "Direct multiplication yields G_0=q and G_1=q[(s+2+a)c^2-s]=q(2z+a). The submitted U recurrence makes P_0=1, P_1=2z+a and gives the identical second-order recurrence. The stated induction therefore proves the identity for all n. No division by sin(y) occurs, so endpoint and midpoint evaluations remain legitimate."
+    },
+    {
+      "id": "polynomial_extension",
+      "source": "CANDIDATE.md:53-58,96-103",
+      "claim": "The task's quotient extends uniquely to Q_{n,s}(x)=P_n(Ax^2+1-A), of degree exactly 2n.",
+      "status": "VERIFIED",
+      "evidence": "For -1 < x < 1, sin(arccos x)=sqrt(1-x^2)>0, so the quotient is exactly the displayed composition. Its leading coefficient is 2^n A^n, which is nonzero. Uniqueness follows from the polynomial root bound, justified by the factor theorem later in the submission."
+    },
+    {
+      "id": "u_evaluations",
+      "source": "CANDIDATE.md:60-69",
+      "claim": "The sine formula and endpoint evaluations for U_m hold for all m >= 0.",
+      "status": "VERIFIED",
+      "evidence": "The sine addition identity reproduces the stated recurrence and the initial values. Its denominator is nonzero for 0 < theta < pi. The endpoint recurrence gives U_m(1)=m+1 and U_m(-1)=(-1)^m(m+1), with matching initial values. These are valid inductions already specified in the submission."
+    },
+    {
+      "id": "alternating_nodes",
+      "source": "CANDIDATE.md:71-89",
+      "claim": "P_n has alternating nonzero signs at b_k=cos(k pi/n), k=0,...,n.",
+      "status": "VERIFIED",
+      "evidence": "The nodes are strictly decreasing. For 1 <= k <= n-1, sin(k pi/n) is nonzero, U_{n-1}(b_k)=0, and U_n(b_k)=(-1)^k. At the two endpoints the positive magnitudes are n+1+an and n+1-an=1+n(1-a). For n=1 the interior index set is empty and the two endpoint signs still give the required alternation."
+    },
+    {
+      "id": "p_root_existence",
+      "source": "CANDIDATE.md:91-94",
+      "claim": "There are at least n distinct roots r_k in (-1,1).",
+      "status": "VERIFIED",
+      "evidence": "For every k=1,...,n, P_n is real and continuous on the nondegenerate closed interval [b_k,b_{k-1}], with opposite nonzero endpoint signs. The stated intermediate value theorem supplies a root in each open interval. These n open intervals are pairwise disjoint, giving n distinct roots strictly inside (-1,1)."
+    },
+    {
+      "id": "p_completeness_and_simplicity",
+      "source": "CANDIDATE.md:96-103",
+      "claim": "Those are all roots of P_n, each with multiplicity one.",
+      "status": "VERIFIED",
+      "evidence": "There are n distinct roots and degree exactly n, so the stated factor theorem yields the full factorization P_n(z)=2^n product_k(z-r_k). Its derivative at r_k is 2^n product_{j != k}(r_k-r_j), which is nonzero. Thus the proof supplies both location and simplicity, not merely a degree bound."
+    },
+    {
+      "id": "q_root_location_and_count",
+      "source": "CANDIDATE.md:105-122",
+      "claim": "Q_{n,s} has exactly 2n distinct roots +/-xi_k in (-1,1), satisfying (s-1)/(s+1) < |x| < 1.",
+      "status": "VERIFIED",
+      "evidence": "For every r_k in (-1,1), xi_k^2=(r_k+A-1)/A lies strictly between (A-2)/A and 1, with the lower bound positive. Distinct r_k give distinct positive xi_k; consequently all 2n signed roots are distinct. Substitution into the already established full factorization of P_n gives equation (8), which excludes any additional roots. The stronger bound follows from (A-2)/A=(s-1)^2/(s+1)^2."
+    },
+    {
+      "id": "q_root_simplicity",
+      "source": "CANDIDATE.md:113-124",
+      "claim": "Every root of Q_{n,s} is simple.",
+      "status": "VERIFIED",
+      "evidence": "At every signed root x, the derivative is 2Ax P_n'(Ax^2+1-A). Each factor is nonzero: A>0, x != 0, and the corresponding root of P_n is simple. The explicit product factorization independently verifies multiplicity one."
+    },
+    {
+      "id": "g_root_count_and_simplicity",
+      "source": "CANDIDATE.md:127-136",
+      "claim": "G_{n,s} has exactly 2n simple zeros in (0,pi), with n in each half.",
+      "status": "VERIFIED",
+      "evidence": "On the requested open interval sin(y)>0 and cos is a bijection onto (-1,1). Thus all and only the 2n polynomial roots produce zeros of G. Positive xi_k give n points arccos(xi_k) in (0,pi/2), and their negatives give n reflected points in (pi/2,pi). The submitted derivative formula G'(y_0)=-sin^2(y_0)Q'(cos(y_0)) is correct at a zero and nonzero."
+    },
+    {
+      "id": "special_n_one",
+      "source": "CANDIDATE.md:140-145",
+      "claim": "The n=1 formula, two exact interior zeros, and simplicity are correct.",
+      "status": "VERIFIED",
+      "evidence": "Q_{1,s}(x)=((s+1)^2/s)x^2-s has roots +/-s/(s+1), both nonzero and strictly between -1 and 1. These give exactly the two angles stated. Q' is nonzero there, and the earlier derivative transfer proves simplicity for G."
+    },
+    {
+      "id": "special_zero_endpoint",
+      "source": "CANDIDATE.md:147-152",
+      "claim": "y=0 is a simple endpoint zero and is excluded from the interior count.",
+      "status": "VERIFIED",
+      "evidence": "C_s(0)=E(0)=I. Also Q(1)=P_n(1)=n+1+n/s, and differentiating the all-y identity gives G'(0)=Q(1)>0. The counting bijection is used only on (0,pi), so this zero is not counted."
+    },
+    {
+      "id": "special_pi_endpoint",
+      "source": "CANDIDATE.md:154-159",
+      "claim": "y=pi is a simple endpoint zero and is excluded from the interior count.",
+      "status": "VERIFIED",
+      "evidence": "C_s(pi)=I and E(pi)=-I. The even polynomial composition gives Q(-1)=P_n(1)=n+1+n/s. Differentiation gives G'(pi)=-Q(-1)<0, with the stated sign and without any parity factor in n. This endpoint is excluded."
+    },
+    {
+      "id": "special_midpoint",
+      "source": "CANDIDATE.md:161-166",
+      "claim": "G_{n,s}(pi/2)=Q_{n,s}(0)=(-s)^n != 0.",
+      "status": "VERIFIED",
+      "evidence": "The directly evaluated diagonal matrix C_s(pi/2)=diag(-1/s,-s), raised to the integer power n and left-multiplied by E(pi/2), has (1,2) entry (-s)^n. Since sin(pi/2)=1, this also equals Q(0). It is nonzero for every permitted s and n."
+    },
+    {
+      "id": "boundary_r_one",
+      "source": "CANDIDATE.md:168-173",
+      "claim": "The same exact count and simplicity hold at R=1, including the claimed polynomial extension.",
+      "status": "VERIFIED",
+      "evidence": "For s=1, direct multiplication gives C_1(y)=E(2y) and E(u)E(v)=E(u+v). Therefore G_{n,1}(y)=sin((2n+1)y). Precisely k=1,...,2n yield interior zeros k pi/(2n+1), with nonzero derivatives (2n+1)(-1)^k. The midpoint value is (-1)^n and endpoints are excluded. The previously proved sine formula gives Q_{n,1}=U_{2n}, of degree 2n, with exactly the 2n distinct cosine roots stated; the factor theorem proves their simplicity. This independent boundary argument does not reuse the strict inequality A>2 at A=2."
+    },
+    {
+      "id": "theorem_hypotheses_and_uniformity",
+      "source": "CANDIDATE.md:1-173; TASK.md:18-20",
+      "claim": "The proof satisfies the exact task and states the external theorem hypotheses needed for its argument.",
+      "status": "VERIFIED",
+      "evidence": "The intermediate value theorem is explicitly stated with real continuity on a closed interval and opposite nonzero endpoint signs; all these hypotheses are checked. The factor theorem is stated and applied to the real polynomials and distinct real roots in question. The 2-by-2 matrix identity and the trigonometric recurrence formulas are justified directly. Remaining steps use elementary algebra, trigonometry, and differentiation. The argument treats arbitrary n>=1 and s>1 without numerical, finite-sample, asymptotic, or spectral assumptions, and separately proves the s=1 boundary."
+    }
+  ],
+  "independent_checks": {
+    "inputs": ["TASK.md", "CANDIDATE.md"],
+    "external_sources_used": [],
+    "method": "Line-by-line exact verification of the submitted argument, supplemented by symbolic Laurent-polynomial algebra over the integers with q^2=1-c^2.",
+    "scratch_file": "audit_check.py",
+    "command": "python3 audit_check.py",
+    "result": "15 exact algebra checks passed.",
+    "scope": "The scratch checks cover matrix identities, initial values, parameter identities, and special matrix evaluations. They do not establish the root count on their own. The uniform root-count and multiplicity conclusions are supported by the already submitted sign-interval and factorization proof."
+  },
+  "rationale": "PASS is warranted because every requested claim is proved in the original submission. The decisive closure is the construction of n disjoint sign-change intervals for the degree-n polynomial P_n, followed by a full factorization proving all its roots simple and inside (-1,1). The explicitly controlled quadratic pullback then gives all 2n distinct simple roots of Q, and the positive sine factor and cosine bijection transfer exactly that count and simplicity to G on (0,pi). The n=1, both endpoint, midpoint, and R=1 audits are correct. No earliest substantive gap, false claim, or unresolved obligation was found. No missing load-bearing argument has been supplied as a repair, and the supplementary checker is not being used as a replacement for a uniform exact proof."
+}

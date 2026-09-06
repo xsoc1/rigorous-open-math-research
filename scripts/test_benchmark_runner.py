@@ -13,13 +13,19 @@ import benchmark_runner as R
 
 
 class RunnerTests(unittest.TestCase):
-	def test_quota_reserve_and_staleness(self):
+	def test_quota_exhaustion_and_staleness(self):
 		with tempfile.TemporaryDirectory() as Directory:
 			Path = R.Path(Directory) / "quota.json"
-			Data = dict(captured_at=R.utc_now(), five_hour_remaining=34, weekly_remaining=30)
+			Data = dict(captured_at=R.utc_now(), five_hour_remaining=1, weekly_remaining=1)
 			R.persist(Path, Data)
-			self.assertEqual(R.quota_reason(Path, launching=True), "QUOTA_RESERVE")
+			self.assertIsNone(R.quota_reason(Path, launching=True))
 			self.assertIsNone(R.quota_reason(Path))
+			Data.update(five_hour_remaining=1, weekly_remaining=0)
+			R.persist(Path, Data)
+			self.assertEqual(R.quota_reason(Path, launching=True), "QUOTA_EXHAUSTED")
+			Data["weekly_remaining"] = 1
+			R.persist(Path, Data)
+			self.assertIsNone(R.quota_reason(Path, launching=True))
 			Data["captured_at"] = (datetime.now(timezone.utc) - timedelta(seconds=301)).isoformat()
 			R.persist(Path, Data)
 			self.assertEqual(R.quota_reason(Path), "QUOTA_SNAPSHOT_STALE")

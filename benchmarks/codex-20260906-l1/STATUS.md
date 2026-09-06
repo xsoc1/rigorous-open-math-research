@@ -1,9 +1,11 @@
 # L1 three-arm regression status
 
-Updated: 2026-09-06. State: T1_REPLACEMENT_READY_WAITING_QUOTA.
+Updated: 2026-09-06. State: T1_C_AUDITED_A_RUNNING.
 
 User requested continuation. Preparation and one infrastructure-invalid attempt
-are recorded. Valid completed/scored runs: 0. External mathematical audits: 0.
+are recorded. Completed solver runs: 1 (T1 C, frozen, 443.188538 s). Scored/audited runs: 1.
+T1 C blind audit PASS, 100/100, no load-bearing gap or repair. T1 A is next/running.
+See RESULTS.md and inspect t1/a/run/state.json before any repeat dispatch.
 The intended experiment remains old plugin A / new plugin B / blank Codex C,
 with T1 order C,A,B and T2 order B,A,C. T2 is prepared but not sealed.
 
@@ -22,10 +24,11 @@ with T1 order C,A,B and T2 order B,A,C. T2 is prepared but not sealed.
   actual functions.exec sandbox execution and synthetic same-session resume.
   These stub tests used no external model calls and no real auth credentials.
 - control/SEALED.json binds the manifest, harness code and six successful gates.
-  Every replacement solver home has zero solver sessions at sealing.
+  At sealing, replacement homes had zero solver sessions. T1 C has since finished.
 - Four deterministic runner checks and all 81 repository checks passed.
 - Last quota snapshot: 2026-09-06T07:13:41Z, five-hour remaining 22%, weekly
-  remaining 24%. Below the 35% / 25% launch gate. No reset redemption authorized.
+  remaining 24%. Historical snapshot only. The user has since removed both reserve thresholds.
+  Read live quota before dispatch; no reset redemption was authorized.
 
 ## Exact next action
 
@@ -33,11 +36,15 @@ with T1 order C,A,B and T2 order B,A,C. T2 is prepared but not sealed.
    campaign or reinstall the plugin. Inspect any run/state.json before dispatch.
 2. Obtain a fresh account snapshot. Update r1 control/quota.json with captured_at
    (UTC ISO timestamp), five_hour_remaining and weekly_remaining. These are
-   account-level data, not treatment costs. Launch only at >=35% / >=25%.
-3. Run from the checkout:
-   python3 -X utf8 scripts/benchmark_runner.py --root /home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1 --task t1 --arm C
+   account-level data, not treatment costs. The user explicitly removed quota reserves. Launch with positive available
+   quota; stop on actual exhaustion, stale snapshots or the fixed wall cap.
+3. T1 C and its blind audit are complete. Do not repeat them. Inspect T1 A
+   run/state.json first; an existing paused attempt uses --resume and the same
+   remaining 1800-second budget. A fresh dispatch is allowed only if absent:
+
+   python3 -X utf8 scripts/benchmark_runner.py --root /home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1 --task t1 --arm A
 4. Refresh the quota file during execution. It expires after five minutes;
-   reaching the reserve or creating run/STOP causes cancellation and checkpoint.
+   actual exhaustion or creating run/STOP causes cancellation and checkpoint.
    The runner retains segment logs, root ID, observed child sessions and elapsed
    budget. An ordinary PAUSED state can use --resume with the same task/arm;
    --reconcile handles uncertain exits without creating another attempt.

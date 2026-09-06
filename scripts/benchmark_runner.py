@@ -48,8 +48,8 @@ def quota_reason(path, launching=False):
 		Age = (datetime.now(timezone.utc) - datetime.fromisoformat(Quota["captured_at"])).total_seconds()
 		if(Age < 0 or Age > (120 if launching else 300)):
 			return "QUOTA_SNAPSHOT_STALE"
-		if(Quota["five_hour_remaining"] < (35 if launching else 25) or Quota["weekly_remaining"] < 25):
-			return "QUOTA_RESERVE"
+		if(Quota["five_hour_remaining"] <= 0 or Quota["weekly_remaining"] <= 0):
+			return "QUOTA_EXHAUSTED"
 	except (OSError, ValueError, KeyError, TypeError):
 		return "QUOTA_UNKNOWN"
 	return None

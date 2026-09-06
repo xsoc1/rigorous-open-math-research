@@ -162,3 +162,24 @@ Usage summaries are file-level cumulative observations. A duplicate session
 header appeared in a second file after child dispatch; deduplication and unknown
 in-flight usage must be resolved before reporting aggregate treatment cost.
 The benchmark has zero valid completed runs and zero external audits so far.
+
+## Resource amendment before the first r1 solver call
+
+The user requested continuation with the five-hour window restored and 21% of
+the weekly window remaining. The prior 25% weekly reserve was a coordinator
+policy rather than a user-specified hard budget. For this continuation, start
+with T1 C and its blind audit. Set the weekly stop threshold to <=10%, retaining
+the five-hour launch >=35% and stop <25% thresholds. The weekly launch gate is
+now >10%. This amendment changes only account reserve policy, before any r1
+solver call. Task, treatment, model, effort, wall limits and scores retain their
+original definitions. Preserve the previous seal and bind the updated runner.
+
+## User override: no quota reserve
+
+During T1 C, the user explicitly said no quota reserve is needed. This overrides
+all prior reserve thresholds. Future dispatch and continuation require positive
+available quota only; exhaustion, stale snapshots and the fixed active-wall cap
+still stop execution. No reset-credit redemption was requested. The already
+running first segment retains its loaded runner code, archived by hash in
+control/runner-first-segment.py. If its former reserve triggers, continue the
+same session with the unspent wall budget under this override. Record any pause.
