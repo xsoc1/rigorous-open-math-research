@@ -1,0 +1,95 @@
+{
+	"schema_version": 1,
+	"kind": "REGRESSION_NOT_NOVELTY",
+	"root": "F:\\benchmark\\L1-20260906-ASTRA-ABC",
+	"binary": "C:\\Users\\HuangZY\\AppData\\Local\\OpenAI\\Codex\\bin\\27d6a192e9c98618\\codex.exe",
+	"binary_sha256": "a1cf6360ca71918d5466bc3a32d9f18b7044c9128756d1949e715d277b88c9b6",
+	"cli_version": "codex-cli 0.153.4",
+	"model": "gpt-6-astra",
+	"effort": "max",
+	"arm_commits": {
+		"A": "516037f14f340107da8448b6e42df17317d9fc63",
+		"B": "6d6d739645981a5a2970b5faa26adda49a724113",
+		"C": null
+	},
+	"schedule": {
+		"t1": [
+			"C",
+			"A",
+			"B"
+		],
+		"t2": [
+			"B",
+			"A",
+			"C"
+		]
+	},
+	"arms": [
+		{
+			"task": "t1",
+			"arm": "A",
+			"base": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t1\\a",
+			"home": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t1\\a\\home",
+			"work": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t1\\a\\work",
+			"prompt_sha256": "bdc8d34d7fbb149d9d2c03c9f0c452605cdb3d7c3931e09ddd28cffabfb5802d",
+			"config_sha256": "2b41441bd32a85a2dc4214f0b8dad6d720851c61cfb2e89a5c215e63082b1ec4"
+		},
+		{
+			"task": "t1",
+			"arm": "B",
+			"base": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t1\\b",
+			"home": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t1\\b\\home",
+			"work": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t1\\b\\work",
+			"prompt_sha256": "bdc8d34d7fbb149d9d2c03c9f0c452605cdb3d7c3931e09ddd28cffabfb5802d",
+			"config_sha256": "8e459a7d7e825406f5546748067e67ef445ef583648890d33bc35de1f2202071"
+		},
+		{
+			"task": "t1",
+			"arm": "C",
+			"base": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t1\\c",
+			"home": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t1\\c\\home",
+			"work": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t1\\c\\work",
+			"prompt_sha256": "6121f2f3e5b5fbed4fb06e28b8b6c81f887894f40428b8098c29899e9316b63d",
+			"config_sha256": "383d9ea1da31bde6a745a811a1fcd7f9ac95e767735faf2d1ed9cb2061d48030"
+		},
+		{
+			"task": "t2",
+			"arm": "A",
+			"base": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t2\\a",
+			"home": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t2\\a\\home",
+			"work": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t2\\a\\work",
+			"prompt_sha256": "e52bfdc4ad0e9c9b9cdc8188c219322fa8f4bbbc7af8022796cc0b01dcc113a2",
+			"config_sha256": "2a268ccec336368a3662c281add89e2e61855ef38bf869786609159bad391882"
+		},
+		{
+			"task": "t2",
+			"arm": "B",
+			"base": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t2\\b",
+			"home": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t2\\b\\home",
+			"work": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t2\\b\\work",
+			"prompt_sha256": "e52bfdc4ad0e9c9b9cdc8188c219322fa8f4bbbc7af8022796cc0b01dcc113a2",
+			"config_sha256": "ddb3d88bfc8a98630b0228bd6183c7df226bf6edb9cd89caede7eed1fe41bdf7"
+		},
+		{
+			"task": "t2",
+			"arm": "C",
+			"base": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t2\\c",
+			"home": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t2\\c\\home",
+			"work": "F:\\benchmark\\L1-20260906-ASTRA-ABC\\t2\\c\\work",
+			"prompt_sha256": "8279600a2e5cb0fcef917caaeb4854635520d516e7cf07ae5e06aca58db956c1",
+			"config_sha256": "0dcd9f89d1665b74e9ed23e9ef757f0f7e02b12bee2b49b47dfb4c0dc2b22141"
+		}
+	],
+	"tasks": {
+		"t1": {
+			"source": "F:\\LaTeX\\BVE research\\runs\\plugin-benchmark-20260824-calibration\\frozen_task.md",
+			"sha256": "1fa717b9a5f195c42ecca97d51e20327cb4eb2c316c936c054f55f7dd7416f16"
+		},
+		"t2": {
+			"source": "F:\\LaTeX\\BVE research\\runs\\three-arm-pilot-v2\\pilot-v5-codex-u2\\frozen_task.md",
+			"sha256": "6859e0af922ba8454758e2195fcefcfe8fa164a40e2c23022ec7ebb2da228943"
+		}
+	},
+	"python": "F:\\tools\\codex-benchmark-runtime-20260906\\python.exe",
+	"python_sha256": "3cce33d75d6fdae4e004d0bdf149320b3147482a9caf370079dcb9c191a1b260"
+}

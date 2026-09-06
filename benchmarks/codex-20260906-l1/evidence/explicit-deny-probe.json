@@ -1,0 +1,13 @@
+{
+	"workspace_write": true,
+	"foreign_read_blocked": false,
+	"project_read_blocked": false,
+	"auth_read_blocked": false,
+	"network_blocked": true,
+	"prompt_items": 5,
+	"prompt_bytes": 13567,
+	"workflow_visible": false,
+	"legacy_project_visible": false,
+	"foreign_session_visible": false,
+	"verdict": "FAIL"
+}
