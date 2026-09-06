@@ -1,0 +1,56 @@
+{
+	"root_thread_id": "01a076cc-139f-76f1-aede-3af2443f3a4a",
+	"segments": [
+		{
+			"path": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t1/a/run/segment-01",
+			"active_seconds": 451.42257679405157,
+			"exit_code": 1,
+			"stop_reason": null
+		},
+		{
+			"path": "/home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t1/a/run/segment-02",
+			"active_seconds": 826.5756227070233,
+			"exit_code": 0,
+			"stop_reason": null
+		}
+	],
+	"events": [
+		{
+			"segment": "segment-01",
+			"line": 1,
+			"event": {
+				"type": "thread.started",
+				"thread_id": "01a076cc-139f-76f1-aede-3af2443f3a4a"
+			}
+		},
+		{
+			"segment": "segment-01",
+			"line": 38,
+			"event": {
+				"type": "error",
+				"message": "You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Sep 7th, 2026 1:32 AM."
+			}
+		},
+		{
+			"segment": "segment-01",
+			"line": 39,
+			"event": {
+				"type": "turn.failed",
+				"error": {
+					"message": "You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Sep 7th, 2026 1:32 AM."
+				}
+			}
+		},
+		{
+			"segment": "segment-02",
+			"line": 1,
+			"event": {
+				"type": "thread.started",
+				"thread_id": "01a076cc-139f-76f1-aede-3af2443f3a4a"
+			}
+		}
+	],
+	"extra_budget_seconds": 0,
+	"classification": "NATURAL_QUOTA_INTERRUPTION_SAME_ATTEMPT",
+	"controlled_feature_acceptance": false
+}

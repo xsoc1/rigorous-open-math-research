@@ -1,0 +1,14 @@
+Command: python3 /home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t1/a/work/runs/rigorous-open-math-research/b3-o3/reproducibility/verify_artifacts.py
+PASS: frozen proof/source/contract/obligation hashes, independent audit, and final proof body match.
+This is an artifact-integrity check, not Lean or automated mathematical verification.
+Exit code: 0
+
+Command: python3 /home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1/t1/a/home/plugins/cache/math-research/math-research-workflow/1.14.1/scripts/validate_pipeline.py --project .
+ok: found 1 task packet(s)
+ok: found 1 manager run manifest(s)
+warn: runs/rigorous-open-math-research/b3-o3/run-manifest.json: status 'INDEPENDENTLY_AUDITED_PROOF' is outside the formalization gate ['CANDIDATE_COMPLETE_PROOF', '已证']
+ok: found 1 run whiteboard(s)
+ok: found 1 closure gate(s)
+ok: found 17 claim-bearing markdown file(s)
+whole-project result: 0 problem(s) found, 1 warning(s), 6 check(s).
+Exit code: 0

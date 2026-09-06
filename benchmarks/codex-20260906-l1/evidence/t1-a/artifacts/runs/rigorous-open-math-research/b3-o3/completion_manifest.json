@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "candidate_author_id": "/root",
+  "frozen_at": "2026-09-06T13:15:35.428287+00:00",
+  "contract": {
+    "path": "problem_contract.md",
+    "sha256": "d3814eec4c85b0938d3d2b786f02d6453e807afd4ad20b597a70a0c934ef270d"
+  },
+  "obligation_graph": {
+    "path": "obligation_graph.json",
+    "sha256": "2716dd9986949ac3acdcc599437acfa9fd170f644cbd84487e61262be8a70582"
+  },
+  "candidate_proof": {
+    "path": "candidate_proof.md",
+    "sha256": "d0f59db7d9f968a1b15b85eb2d9142c3e82c3680c5ed2a0e013394841d972b22"
+  },
+  "dependencies": [
+    {
+      "path": "source_statement.md",
+      "sha256": "ff200cc02a98d653e0d207969adab99af802a13f8b8c557d49f7574e3810f89b"
+    }
+  ],
+  "root_obligations": [
+    {
+      "id": "O1",
+      "status": "CLOSED",
+      "proof_anchor": "candidate_proof.md#polynomial-reduction"
+    },
+    {
+      "id": "O2",
+      "status": "CLOSED",
+      "proof_anchor": "candidate_proof.md#roots-of-h"
+    },
+    {
+      "id": "O3",
+      "status": "CLOSED",
+      "proof_anchor": "candidate_proof.md#transfer-of-root-count-and-simplicity"
+    },
+    {
+      "id": "O4",
+      "status": "CLOSED",
+      "proof_anchor": "candidate_proof.md#requested-separate-audits"
+    },
+    {
+      "id": "O5",
+      "status": "CLOSED",
+      "proof_anchor": "candidate_proof.md#external-facts-and-verification-scope"
+    }
+  ]
+}

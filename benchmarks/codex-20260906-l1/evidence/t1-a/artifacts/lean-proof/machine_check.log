@@ -1,0 +1,31 @@
+command -v lean: no executable found
+command -v lake: no executable found
+No Lean build attempted.
+Static scaffold scan:
+[
+  {
+    "file": "lean-proof/B3O3.lean",
+    "line": 30,
+    "text": "sorry"
+  },
+  {
+    "file": "lean-proof/B3O3.lean",
+    "line": 36,
+    "text": "sorry"
+  },
+  {
+    "file": "lean-proof/B3O3.lean",
+    "line": 42,
+    "text": "sorry"
+  },
+  {
+    "file": "lean-proof/B3O3.lean",
+    "line": 47,
+    "text": "sorry"
+  },
+  {
+    "file": "lean-proof/B3O3.lean",
+    "line": 51,
+    "text": "sorry"
+  }
+]

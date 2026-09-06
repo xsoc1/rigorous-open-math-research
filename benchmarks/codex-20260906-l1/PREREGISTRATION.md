@@ -183,3 +183,19 @@ still stop execution. No reset-credit redemption was requested. The already
 running first segment retains its loaded runner code, archived by hash in
 control/runner-first-segment.py. If its former reserve triggers, continue the
 same session with the unspent wall budget under this override. Record any pause.
+
+## Delivery handling before A external audit
+
+A's returned answer starts with a standalone workflow status line disclosing
+an internal audit PASS. To honor the existing blind-audit contract, remove only
+such standalone leading process/verdict metadata from the auditor copy. Keep
+every mathematical assertion, proof step and limitation unchanged. Record the
+removed bytes and both original and blinded hashes. C has no such status line
+and was submitted unchanged; apply the same rule when B returns.
+
+A also returned a regular-file symlink to its own workspace source statement.
+The strict freeze gate refused it after normal solver exit. Under the campaign
+lock, verify every link resolves to a regular file inside the stopped workspace,
+materialize only the frozen copy, and compare all source/copy hashes before and
+after. Record this as packaging reconciliation with zero added solver time or
+model calls. Preserve the original workspace and the pre-reconciliation state.

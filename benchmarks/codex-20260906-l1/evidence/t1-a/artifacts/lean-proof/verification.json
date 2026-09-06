@@ -1,0 +1,47 @@
+{
+  "verdict": "SCAFFOLDED",
+  "machine": {
+    "lean_version": "unavailable on PATH",
+    "lake_version": "unavailable on PATH",
+    "build_passed": false,
+    "build_attempted": false,
+    "sorry_axiom_hits": [
+      {
+        "file": "lean-proof/B3O3.lean",
+        "line": 30,
+        "text": "sorry"
+      },
+      {
+        "file": "lean-proof/B3O3.lean",
+        "line": 36,
+        "text": "sorry"
+      },
+      {
+        "file": "lean-proof/B3O3.lean",
+        "line": 42,
+        "text": "sorry"
+      },
+      {
+        "file": "lean-proof/B3O3.lean",
+        "line": 47,
+        "text": "sorry"
+      },
+      {
+        "file": "lean-proof/B3O3.lean",
+        "line": 51,
+        "text": "sorry"
+      }
+    ]
+  },
+  "statement_fidelity": [],
+  "critical_errors": [],
+  "gaps": [
+    {
+      "location": "lean-proof/B3O3.lean",
+      "issue": "Uncompiled statement scaffold with five intentionally open formal proof obligations; no machine verification."
+    }
+  ],
+  "repair_hints": "If full formal verification is requested in a later authorized environment, pin Lean and Mathlib, audit the statement scaffold, fill every proof hole, and run machine checks. No such installation or external retrieval is performed in this blind run.",
+  "covered_scope": "Executable availability and static scaffold proof-hole scan only.",
+  "residual_risk": "Scaffold has not been parsed or compiled; informal proof correctness is assessed separately."
+}

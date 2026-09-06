@@ -1,0 +1,3 @@
+# Exact falsification checks
+
+The lead performed no numerical experiments or parameter scans. The independent auditor reports additional exact symbolic and rational consistency checks, detailed in audit_report.md; these are not used to establish the uniform result. The n=1 case was derived directly from matrix multiplication and checked against H_1=2z+s^{-1}. At y=pi/2, direct diagonal multiplication gives (-s)^n, agreeing with the recurrence's constant term. At R=1, C=E^2 gives sin((2n+1)y). These checks support consistency; the uniform proof is the recurrence and sign-grid argument, not finite-case extrapolation.

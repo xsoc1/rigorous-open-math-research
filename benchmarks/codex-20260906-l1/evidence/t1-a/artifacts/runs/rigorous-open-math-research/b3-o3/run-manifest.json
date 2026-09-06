@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "run_id": "R-20260906T125815Z-B3O3",
+  "started_at": "2026-09-06T12:58:15Z",
+  "task_packet_path": "agenda/task-packets/Q-B3O3-20260906.md",
+  "task_packet_sha256": "04280623cbf0baf0a78b16d3d0bb4d0473ed9d4610205704a5dad335803fa7ea",
+  "upstream_status_verbatim": "INDEPENDENTLY_AUDITED_PROOF",
+  "formalization": "scaffold",
+  "formalization_manifest": "formalization_progress.md",
+  "formalization_reason": "No Lean or Lake executable on PATH; no full formal verification requested. Uncompiled statement scaffold retained.",
+  "source_statement_sha256": "ff200cc02a98d653e0d207969adab99af802a13f8b8c557d49f7574e3810f89b",
+  "candidate_proof_sha256": "d0f59db7d9f968a1b15b85eb2d9142c3e82c3680c5ed2a0e013394841d972b22",
+  "git": "not inspected; user restriction",
+  "internet": "not used; forbidden",
+  "numerical_experiments": 0,
+  "doctor": "restricted manual preflight; stock script omitted to avoid prohibited home/CLI inspection",
+  "independent_audit": {
+    "state": "PASS",
+    "reviewer_id": "/root/completion_auditor",
+    "path": "runs/rigorous-open-math-research/b3-o3/completion_audit.json",
+    "sha256": "632a256fceb51b5176bb6e5d69e979199058c590eea7e61899d22b9afb66184e"
+  },
+  "completed_at": "2026-09-06T13:23:34.143473+00:00",
+  "fast_close": "STOP",
+  "remaining_mathematical_gaps": [],
+  "answer_path": "answer.md",
+  "answer_sha256": "f7694319cc2585203cac6e69b216af5753fe07e0dd656b9d6314affe73c04bd7",
+  "completion_manifest_sha256": "ba4cc98072bebfe51db7c51b867fc4531248fd468416f7ad041bbc86828300f5",
+  "final_answer_transformation": "Only the first status line differs from the frozen candidate; proof body is byte-identical.",
+  "exact_audit_probes": "Auditor reports in-memory exact Laurent-polynomial and rational matrix consistency checks; see audit_report.md. These are not proof dependencies.",
+  "machine_formal_verification": false,
+  "final_artifact_checks": {
+    "integrity_exit_code": 0,
+    "pipeline_exit_code": 0,
+    "log_path": "runs/rigorous-open-math-research/b3-o3/reproducibility/final_checks.log",
+    "advisory": "INDEPENDENTLY_AUDITED_PROOF is outside the validator default formalization-gate label list. Full formalization is not claimed."
+  }
+}

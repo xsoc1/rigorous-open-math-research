@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-06T13:18:30.412310+00:00",
+  "status": "SCAFFOLDED",
+  "formalization": "scaffold",
+  "build_attempted": false,
+  "lean_path": null,
+  "lake_path": null,
+  "inputs": [
+    {
+      "path": "lean-proof/B3O3.lean",
+      "sha256": "67b66c2eccbf6b7ab9387f4f7c0e79f64d7d8765aeccf9beb4eba8e626a6188b"
+    }
+  ],
+  "reason": "Neither Lean nor Lake is available; no internet/dependency fetching authorized. This scaffold is not a verified proof.",
+  "input_hashes": {
+    "B3O3.lean": "67b66c2eccbf6b7ab9387f4f7c0e79f64d7d8765aeccf9beb4eba8e626a6188b"
+  }
+}

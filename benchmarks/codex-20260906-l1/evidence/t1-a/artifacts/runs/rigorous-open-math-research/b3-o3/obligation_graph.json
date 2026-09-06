@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "root_obligations": [
+    {
+      "id": "O1",
+      "status": "CLOSED",
+      "proof_anchor": "candidate_proof.md#polynomial-reduction"
+    },
+    {
+      "id": "O2",
+      "status": "CLOSED",
+      "proof_anchor": "candidate_proof.md#roots-of-h"
+    },
+    {
+      "id": "O3",
+      "status": "CLOSED",
+      "proof_anchor": "candidate_proof.md#transfer-of-root-count-and-simplicity"
+    },
+    {
+      "id": "O4",
+      "status": "CLOSED",
+      "proof_anchor": "candidate_proof.md#requested-separate-audits"
+    },
+    {
+      "id": "O5",
+      "status": "CLOSED",
+      "proof_anchor": "candidate_proof.md#external-facts-and-verification-scope"
+    }
+  ],
+  "dependencies": {
+    "O3": [
+      "O1",
+      "O2"
+    ],
+    "O1": [],
+    "O2": [],
+    "O4": [],
+    "O5": []
+  }
+}

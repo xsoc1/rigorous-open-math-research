@@ -1,0 +1,17 @@
+{
+	"recorded_at": "2026-09-06T13:27:38.592472+00:00",
+	"classification": "POST_RETURN_PACKAGING_RECONCILIATION",
+	"reason": "Within-workspace regular-file symlink blocked the generic freeze gate.",
+	"method": "Solver exited normally and campaign lock acquired. Verified every link resolves to a regular file inside the original work directory. Materialized only the frozen copy and verified all source and copy hashes before and after. Original work and model output remain unchanged.",
+	"links": [
+		{
+			"path": "runs/rigorous-open-math-research/b3-o3/source_statement.md",
+			"link": "../../../source_statement.md",
+			"target": "source_statement.md",
+			"sha256": "ff200cc02a98d653e0d207969adab99af802a13f8b8c557d49f7574e3810f89b"
+		}
+	],
+	"original_state_sha256": "e03f5f076ae7694841fd5e940ce3c8373a2780ba6175918727b19758fb30f4fd",
+	"extra_solver_seconds": 0,
+	"new_model_calls": 0
+}

@@ -1,0 +1,19 @@
+{
+	"root": "/home/huangzy/codex-benchmark/blind-audits/419ce067-d3dd-47ef-b291-33e05ad3a2d3",
+	"task_sha256": "1fa717b9a5f195c42ecca97d51e20327cb4eb2c316c936c054f55f7dd7416f16",
+	"candidate_sha256": "eeb98e1c698927149471b10328fe4bdfe587dab41d02aed82383bfe3cc35c938",
+	"prompt_sha256": "0fe00f849eac6832730f488d80428144edb8cc6b88e54fade69e0bd4125407b9",
+	"config_sha256": "36b41f1e0c043db0a18fe219e3d187fc66d4aa06fb2cae271b754b442400d997",
+	"created_at": "2026-09-06T13:28:25.174871+00:00",
+	"budget_seconds": 900,
+	"source_candidate_sha256": "f7694319cc2585203cac6e69b216af5753fe07e0dd656b9d6314affe73c04bd7",
+	"blinding": {
+		"rule": "Remove the standalone leading workflow status line disclosing a previous audit verdict. All mathematical text and claims remain byte-identical.",
+		"removed_lines": [
+			"INDEPENDENTLY_AUDITED_PROOF — STRICT exact proof; independent audit PASS."
+		],
+		"removed_line_numbers": [
+			1
+		]
+	}
+}

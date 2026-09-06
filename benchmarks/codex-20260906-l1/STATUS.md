@@ -1,10 +1,11 @@
 # L1 three-arm regression status
 
-Updated: 2026-09-06. State: T1_C_AUDITED_A_RUNNING.
+Updated: 2026-09-06. State: T1_C_AUDITED_A_EXTERNAL_AUDIT_RUNNING.
 
 User requested continuation. Preparation and one infrastructure-invalid attempt
-are recorded. Completed solver runs: 1 (T1 C, frozen, 443.188538 s). Scored/audited runs: 1.
-T1 C blind audit PASS, 100/100, no load-bearing gap or repair. T1 A is next/running.
+are recorded. Completed solver runs: 2 (T1 C and A). Scored/audited runs: 1.
+T1 C blind audit PASS, 100/100, no load-bearing gap or repair. T1 A returned after
+1277.998200 active seconds across two segments. Its external blind audit is running.
 See RESULTS.md and inspect t1/a/run/state.json before any repeat dispatch.
 The intended experiment remains old plugin A / new plugin B / blank Codex C,
 with T1 order C,A,B and T2 order B,A,C. T2 is prepared but not sealed.
@@ -26,9 +27,22 @@ with T1 order C,A,B and T2 order B,A,C. T2 is prepared but not sealed.
 - control/SEALED.json binds the manifest, harness code and six successful gates.
   At sealing, replacement homes had zero solver sessions. T1 C has since finished.
 - Four deterministic runner checks and all 81 repository checks passed.
-- Last quota snapshot: 2026-09-06T07:13:41Z, five-hour remaining 22%, weekly
-  remaining 24%. Historical snapshot only. The user has since removed both reserve thresholds.
+- Resume quota snapshot: 2026-09-06T13:11:54Z, five-hour remaining 91%, weekly
+  remaining 99%. Historical snapshot only. The user has removed both reserve thresholds.
   Read live quota before dispatch; no reset redemption was authorized.
+
+## A quota interruption and continuation
+
+- Original session: 01a076cc-139f-76f1-aede-3af2443f3a4a.
+- Segment 01 exited with code 1 after 451.422577 active seconds. CLI events
+  explicitly report usage-limit exhaustion. The runner recorded INFRA_EXIT
+  because the CLI exited before the next account snapshot reached zero.
+- Segment 02 started at 2026-09-06T13:11:55Z with the same session ID and
+  1348.577423 seconds remaining from the original 1800-second allowance.
+  The research ledger, contract and candidate proof survived the interruption.
+- This is an observed infrastructure recovery in old arm A, not a controlled
+  test proving an advantage of the new plugin. No mathematical score is assigned
+  before the returned candidate is frozen and independently audited.
 
 ## Exact next action
 
@@ -38,18 +52,18 @@ with T1 order C,A,B and T2 order B,A,C. T2 is prepared but not sealed.
    (UTC ISO timestamp), five_hour_remaining and weekly_remaining. These are
    account-level data, not treatment costs. The user explicitly removed quota reserves. Launch with positive available
    quota; stop on actual exhaustion, stale snapshots or the fixed wall cap.
-3. T1 C and its blind audit are complete. Do not repeat them. Inspect T1 A
-   run/state.json first; an existing paused attempt uses --resume and the same
-   remaining 1800-second budget. A fresh dispatch is allowed only if absent:
+3. T1 C and its blind audit and T1 A solver are complete. Do not repeat them.
+   Inspect r1/control/audit-t1-A.json and its opaque root's candidate/c/run/state.json.
+   If the audit paused or exited due to quota, resume the same audit session:
 
-   python3 -X utf8 scripts/benchmark_runner.py --root /home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1 --task t1 --arm A
+   python3 -X utf8 scripts/benchmark_audit.py --campaign /home/huangzy/codex-benchmark/L1-20260906-ASTRA-ABC-r1 --task t1 --arm A --resume
 4. Refresh the quota file during execution. It expires after five minutes;
    actual exhaustion or creating run/STOP causes cancellation and checkpoint.
    The runner retains segment logs, root ID, observed child sessions and elapsed
    budget. An ordinary PAUSED state can use --resume with the same task/arm;
    --reconcile handles uncertain exits without creating another attempt.
-5. Freeze and inspect the returned mathematics, perform the separately budgeted
-   label-blind audit, and calibrate cost before A/B. Complete usage deduplication
+5. Validate A's returned external audit, then launch T1 B with benchmark_runner.py
+   --task t1 --arm B. Complete usage deduplication
    before aggregate cost comparisons. Missing returns or usage stay UNKNOWN.
 6. T2, feature literature-to-tool reuse, controlled research interruption, L2
    and model/effort ablations remain later work. Do not dispatch them implicitly.
