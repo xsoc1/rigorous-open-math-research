@@ -1,0 +1,28 @@
+{
+	"root_thread_id": "01a076e8-54ca-7531-b267-9c8372da88ed",
+	"active_seconds": 432.19204933397896,
+	"segments": [
+		{
+			"path": "/home/huangzy/codex-benchmark/blind-audits/419ce067-d3dd-47ef-b291-33e05ad3a2d3/candidate/c/run/segment-01",
+			"active_seconds": 391.086885540979,
+			"exit_code": 1,
+			"stop_reason": null
+		},
+		{
+			"path": "/home/huangzy/codex-benchmark/blind-audits/419ce067-d3dd-47ef-b291-33e05ad3a2d3/candidate/c/run/segment-02",
+			"active_seconds": 41.105163792999974,
+			"exit_code": 0,
+			"stop_reason": null
+		}
+	],
+	"role": "BLIND_AUDIT",
+	"status": "RETURNED_UNREVIEWED",
+	"updated_at": "2026-09-07T01:46:43.480212+00:00",
+	"runner_pid": 7128,
+	"process_pid": 7153,
+	"process_start_ticks": "208295",
+	"boot_id": "c22695bd-fbd7-4f23-a329-d67445f00ddc",
+	"current_segment": "/home/huangzy/codex-benchmark/blind-audits/419ce067-d3dd-47ef-b291-33e05ad3a2d3/candidate/c/run/segment-02",
+	"exit_code": 0,
+	"stop_reason": null
+}

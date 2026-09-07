@@ -1,0 +1,10 @@
+{
+	"recorded_at": "2026-09-07T01:51:33.391057+00:00",
+	"root_thread_id": "01a0798d-cd6d-7b22-bbd2-bb4b4a1fdb43",
+	"reason": "Expired isolated authentication copy; refresh token already used.",
+	"same_account": true,
+	"source": "current desktop authentication",
+	"only_private_auth_file_replaced": true,
+	"original_active_seconds": 12.03775490299995,
+	"new_attempt": false
+}

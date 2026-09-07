@@ -1,7 +1,7 @@
 # L1 measured results
 
-Development-task REGRESSION only. Updated 2026-09-06. T1 C has completed;
-A solver returned and its external audit is running. B has not run.
+Development-task REGRESSION only. Updated 2026-09-07. T1 C and A have completed;
+B is running. C and A both passed the independent external audit at 100/100.
 No plugin benefit can yet be inferred.
 
 | T1 stage | Verdict | Score | Active seconds | Uncached input | Cached input | Output | Responses with usage |
@@ -9,7 +9,9 @@ No plugin benefit can yet be inferred.
 | C blank solver | Frozen, independently accepted | - | 443.189 | 41354 | 86272 | 13231 | 7 |
 | C independent blind audit | PASS, no load-bearing gap or repair | 100/100 | 393.085 | 32648 | 113408 | 12024 | 7 |
 | C solver + external audit | Accepted | 100/100 | 836.274 | 74002 | 199680 | 25255 | 14 |
-| A old solver, including internal audit | Frozen; external audit pending | - | 1277.998 | 123374 | 1425408 | 35714 | 29 |
+| A old solver, including internal audit | Frozen, independently accepted | - | 1277.998 | 123374 | 1425408 | 35714 | 29 |
+| A independent blind audit | PASS, no load-bearing gap or repair | 100/100 | 432.192 | 62734 | 101120 | 12304 | 7 |
+| A solver + external audit | Accepted | 100/100 | 1710.190 | 186108 | 1526528 | 48018 | 36 |
 
 C proved the exact uniform polynomial root count and simplicity, with all
 requested n=1, endpoint, midpoint and R=1 checks. The independent auditor
@@ -51,3 +53,16 @@ mathematical edit occurred. See [receipt](evidence/t1-a/freeze-reconciliation.js
 For external blindness, only A's leading status line reporting an earlier audit
 PASS was removed from the auditor copy; all mathematical bytes remain unchanged.
 The [binding](evidence/t1-a/blind-audit-binding.json) records both candidate hashes.
+
+A's external audit checked 15 claims and retained a 16-identity exact algebra
+checker. It exhausted quota after writing its report, then resumed the same
+session for 41.105 seconds and returned normally. Its full 432.192 seconds and
+all seven returned response records are counted. See [audit](evidence/t1-a/audit/audit.json)
+and [audit continuation](evidence/t1-a/audit/quota-continuation.json).
+
+At equal T1 proof quality, observed A/C solver ratios are 2.98 for uncached input
+and 2.88 for active wall time. Full solver-plus-external-audit ratios are 2.51
+for uncached input and 2.05 for active wall time. A includes two natural quota
+continuations, so these raw observations do not isolate plugin overhead from
+recovery overhead. B is required to assess the optimization; one development
+task cannot establish a general performance advantage.

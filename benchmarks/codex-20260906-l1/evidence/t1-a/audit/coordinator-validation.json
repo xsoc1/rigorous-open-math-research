@@ -1,0 +1,14 @@
+{
+	"checked_at": "2026-09-07T01:48:47.260953+00:00",
+	"checks": [
+		"all frozen hashes",
+		"task and candidate bindings",
+		"score shape and ranges",
+		"score sum",
+		"PASS with no load-bearing gaps",
+		"actual model and effort"
+	],
+	"verdict": "PASS",
+	"checked_claim_count": 15,
+	"extra_mathematical_review": false
+}

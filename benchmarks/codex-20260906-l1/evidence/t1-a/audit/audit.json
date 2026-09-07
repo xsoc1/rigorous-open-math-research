@@ -1,0 +1,205 @@
+{
+  "verdict": "PASS",
+  "scores": {
+    "correctness": 40,
+    "fidelity": 20,
+    "strict_progress": 15,
+    "calibration": 10,
+    "evidence": 10,
+    "reproducibility": 5
+  },
+  "total_score": 100,
+  "load_bearing_gaps": [],
+  "earliest_substantive_gap": null,
+  "checked_claims": [
+    {
+      "id": "C01",
+      "claim": "The argument covers every integer n >= 1 and every real R > 1.",
+      "candidate_lines": [
+        6,
+        64,
+        72,
+        80
+      ],
+      "status": "PROVED",
+      "evidence": "s = sqrt(R) > 1 implies 0 < r = 1/s < 1 and a = (s+1)^2/s > 0. The sign and lifting arguments use only these inequalities and n >= 1; there is no finite-parameter or asymptotic restriction."
+    },
+    {
+      "id": "C02",
+      "claim": "The determinant, trace, matrix recurrence, and initial values are correct.",
+      "candidate_lines": [
+        20,
+        35
+      ],
+      "status": "PROVED",
+      "evidence": "Direct multiplication gives det(C) = (c^2+q^2)^2 = 1, tr(C) = 2z(c), G_0 = q, and G_1 = q(a c^2-s) = q(2z(c)+r). The stated 2-by-2 identity gives G_{k+1} = 2z G_k-G_{k-1} for every k >= 1. Exact scratch algebra independently confirms these identities."
+    },
+    {
+      "id": "C03",
+      "claim": "G_{n,s}(y) = sin(y) H_n(z(cos(y))) for every real y, and the proposed Q matches the task's definition.",
+      "candidate_lines": [
+        35,
+        39
+      ],
+      "status": "PROVED",
+      "evidence": "H_0 = 1 and H_1 = 2z+r satisfy the same recurrence, so induction establishes the identity without division by sin(y). Division is subsequently made only at y = arccos(x) with -1 < x < 1, where sin(y) = sqrt(1-x^2) > 0. Thus the reduction remains valid at the separately audited y endpoints."
+    },
+    {
+      "id": "C04",
+      "claim": "Q extends uniquely to a real polynomial of degree exactly 2n with leading coefficient a^n.",
+      "candidate_lines": [
+        10,
+        13,
+        39
+      ],
+      "status": "PROVED",
+      "evidence": "The U recurrence gives degree k and leading coefficient 2^k. For n >= 1, adding r U_{n-1} cannot cancel the degree-n term. Composing H_n with z(x), whose quadratic coefficient is a/2, gives degree 2n and coefficient 2^n(a/2)^n = a^n > 0. Uniqueness follows from the finite root bound for a nonzero polynomial."
+    },
+    {
+      "id": "C05",
+      "claim": "The trigonometric formula, endpoint evaluations, and grid signs for H_n are valid.",
+      "candidate_lines": [
+        43,
+        64
+      ],
+      "status": "PROVED",
+      "evidence": "The sine identity matches the U recurrence and its initial values; sin(theta) is nonzero on (0,pi). At theta = j*pi/n for 1 <= j <= n-1, U_{n-1} = 0 and U_n = (-1)^j. The endpoint formulas give H_n(1) = n+1+rn > 0 and H_n(-1) = (-1)^n(n+1-rn), with n+1-rn = 1+n(1-r) > 0. These are the required alternating, nonzero signs."
+    },
+    {
+      "id": "C06",
+      "claim": "H_n has exactly n roots, all distinct, simple, and in (-1,1).",
+      "candidate_lines": [
+        54,
+        68
+      ],
+      "status": "PROVED",
+      "evidence": "The n intervals between successive points cos(j*pi/n) are disjoint and have opposite nonzero endpoint signs. Continuity and the intermediate value theorem yield at least one root in each open interval. These n distinct roots exhaust degree n; factoring them leaves a nonzero constant, so none can have multiplicity above one and no other roots remain. The proof uses both location and degree, not sign changes or degree alone."
+    },
+    {
+      "id": "C07",
+      "claim": "Each H_n root has exactly two distinct preimages in (-1,1), yielding all 2n Q roots.",
+      "candidate_lines": [
+        72,
+        80
+      ],
+      "status": "PROVED",
+      "evidence": "For -1 < t_i < 1, s+r-2 = (s-1)^2/s > 0 gives 0 < (2t_i+s+r)/a < 1. Therefore the two preimages are the nonzero numbers +/-sqrt((2t_i+s+r)/a), both strictly inside (-1,1). Distinct t_i yield different squared preimages, so the pairs cannot collide. The composition formula and exact degree exclude additional roots."
+    },
+    {
+      "id": "C08",
+      "claim": "All Q roots are simple.",
+      "candidate_lines": [
+        80,
+        84
+      ],
+      "status": "PROVED",
+      "evidence": "z'(x) = ax, hence Q'(x_i) = a x_i H_n'(t_i). All three factors are nonzero: a > 0, x_i != 0, and H_n'(t_i) != 0 by the already established simple factorization."
+    },
+    {
+      "id": "C09",
+      "claim": "G has exactly 2n zeros in (0,pi), all simple.",
+      "candidate_lines": [
+        86,
+        92
+      ],
+      "status": "PROVED",
+      "evidence": "Cosine is a bijection from (0,pi) to (-1,1), and sine is positive there, so the established 2n Q roots correspond to all interior G zeros. At a zero, the product and chain rules give G'(y) = -sin(y)^2 Q'(cos(y)) != 0. Thus both the count and multiplicities transfer."
+    },
+    {
+      "id": "C10",
+      "claim": "The separate n = 1 audit gives exactly two simple interior zeros.",
+      "candidate_lines": [
+        96,
+        101
+      ],
+      "status": "PROVED",
+      "evidence": "Direct multiplication gives Q_1(x) = a x^2-s. Since a = (s+1)^2/s, its roots are exactly +/-s/(s+1), which lie strictly inside (-1,1) and are nonzero. Q_1' = 2ax is nonzero at both. The sign-grid argument also includes n = 1 because its single interval is (-1,1), with no internal grid points required."
+    },
+    {
+      "id": "C11",
+      "claim": "The y = 0 zero is simple and excluded from the requested count.",
+      "candidate_lines": [
+        103,
+        108
+      ],
+      "status": "PROVED",
+      "evidence": "At y = 0, C = I and E = I, so G(0) = 0. The identity valid for every real y gives G'(0) = H_n(1) = n+1+n/s > 0. The count was explicitly restricted to the open interval."
+    },
+    {
+      "id": "C12",
+      "claim": "The y = pi zero is simple and excluded from the requested count.",
+      "candidate_lines": [
+        103,
+        108
+      ],
+      "status": "PROVED",
+      "evidence": "At y = pi, C = I and E = -I, so G(pi) = 0. Since z(-1) = 1, differentiation gives G'(pi) = -H_n(1) = -(n+1+n/s) != 0. This endpoint is not among the 2n interior zeros."
+    },
+    {
+      "id": "C13",
+      "claim": "The midpoint is never a zero, and Q(0) = (-s)^n.",
+      "candidate_lines": [
+        110,
+        116
+      ],
+      "status": "PROVED",
+      "evidence": "At y = pi/2, C = diag(-1/s,-s) and E has first row (0,1). Raising the diagonal matrix to any integer n >= 1 gives G(pi/2) = (-s)^n != 0. The defining sine denominator is 1 here, so Q(0) has the same value."
+    },
+    {
+      "id": "C14",
+      "claim": "The boundary R = 1 has the stated exact formula, count, multiplicities, endpoint behavior, midpoint value, and polynomial.",
+      "candidate_lines": [
+        118,
+        122
+      ],
+      "status": "PROVED",
+      "evidence": "For s = 1, direct multiplication gives C_1(y) = E(y)^2, and angle addition gives G_{n,1}(y) = sin((2n+1)y). Its interior zeros are precisely k*pi/(2n+1), 1 <= k <= 2n, with derivatives (2n+1)(-1)^k. Endpoint derivatives are +(2n+1) and -(2n+1), and its midpoint value is (-1)^n. The proved sine formula gives Q_{n,1} = U_{2n}, of degree 2n with the stated 2n distinct, hence simple, roots. The alternative sign-grid extension at r = 1 is also valid: n+1-rn = 1 and t_i > -1 preserves strictly positive squared preimages."
+    },
+    {
+      "id": "C15",
+      "claim": "The external elementary results are used with their required hypotheses, and the completion claim is justified.",
+      "candidate_lines": [
+        25,
+        26,
+        68,
+        86,
+        90,
+        126
+      ],
+      "status": "PROVED",
+      "evidence": "The intermediate value theorem is stated for a continuous real function on a closed interval with opposite endpoint signs and is applied exactly in that setting. The factor theorem and degree bound apply to real polynomials with the displayed degrees and distinct roots. Product and chain rules apply to polynomials and sine/cosine, which are differentiable on the relevant domains. The matrix identity and needed U identities are provided in the submission. No spectral theorem, numerical extrapolation, or missing uniform argument is needed; no claim of machine verification is made."
+    }
+  ],
+  "rationale": "The submitted proof establishes every requested claim uniformly. Its justified matrix recurrence yields the exact polynomial of degree 2n. Alternating signs on n disjoint intervals, followed by degree exhaustion, prove both the location and simplicity of every H_n root. The explicit quadratic preimages and nonzero derivatives then prove exactly 2n simple interior roots of Q and G. All five requested special audits, including the degenerate sign-grid case n=1 and boundary R=1, are correct. No earliest substantive gap, missing load-bearing proof, or false mathematical claim was found. No repair was supplied. The PASS verdict and scores assess the submitted proof itself; scratch checks only corroborate identities already present.",
+  "score_justifications": {
+    "correctness": "All algebra, implications, root counts, and multiplicity arguments are valid.",
+    "fidelity": "The exact domain, polynomial obligations, excluded endpoints, and every requested special case are addressed.",
+    "strict_progress": "The submission closes the full uniform theorem and leaves no unresolved obligation.",
+    "calibration": "The assertion of completion is supported, and the absence of Lean verification is accurately disclosed.",
+    "evidence": "The submission provides explicit, independently checkable exact reasoning with elementary theorem hypotheses.",
+    "reproducibility": "The proof can be reconstructed from the two supplied files without external literature, data, or numerical assumptions."
+  },
+  "repairs_supplied": [],
+  "verification": {
+    "sources": [
+      "TASK.md",
+      "CANDIDATE.md"
+    ],
+    "source_sha256": {
+      "TASK.md": "1fa717b9a5f195c42ecca97d51e20327cb4eb2c316c936c054f55f7dd7416f16",
+      "CANDIDATE.md": "eeb98e1c698927149471b10328fe4bdfe587dab41d02aed82383bfe3cc35c938"
+    },
+    "method": "Independent line-by-line mathematical review plus exact algebra in Q[s,s^-1,c,q]/(q^2+c^2-1), implemented with Python's standard library.",
+    "checker": "audit_check.py",
+    "checker_sha256": "76a768c918975ba793307aa3c65486528b3958e908665d554759dbe737e2d7cb",
+    "command": "python3 audit_check.py",
+    "python_version": "3.14.4",
+    "exact_checks_passed": 16,
+    "numerical_sampling_used": false,
+    "limitation": "The scratch checker verifies supporting algebraic identities, not the full theorem formally. Uniform induction, root location, counting, and simplicity were checked directly in the submitted argument.",
+    "external_sources_used": false,
+    "subagents_used": false,
+    "started_at_utc": "2026-09-06 13:29:13 UTC",
+    "consolidated_at_utc": "2026-09-06 13:35:17 UTC"
+  }
+}
